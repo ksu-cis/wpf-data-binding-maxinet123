@@ -6,24 +6,30 @@
              xmlns:local="clr-namespace:UniversityRegistry.UI"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="400">
-    <Border Padding="10">
+    <Border Padding="10" BorderBrush="Gray">
         <StackPanel>
             <TextBlock FontSize="18">Personal Details</TextBlock>
             
             <Label Content="First Name"/>
-            <TextBox Name="txtFirstName"/>
+            <TextBox Name="txtFirstName" Text="{Binding Path=FirstName}"/>
             
             <Label Content="Last Name"/>
-            <TextBox Name="txtLastName"/>
+            <TextBox Name="txtLastName" Text="{Binding Path=LastName}"/>
             
             <Label Content="Date of Birth"/>
-            <DatePicker Name="dpDateOfBirth"/>
+            <DatePicker Name="dpDateOfBirth" Text="{Binding Path=DateOfBirth}"/>
             
-            <CheckBox Name="cbActive" Margin="0 10 0 0">Active</CheckBox>
+            <CheckBox Name="cbActive" Margin="0 10 0 0" IsChecked="{Binding Path=Active}">Active</CheckBox>
+            
             
             <Label Content="Role"/>
-            <TextBox Name="txtRole"/>
+            <RadioButton GroupName="Role" IsChecked="{Binding Path=IsUndergraduateStudent}">Undergraduate Student</RadioButton>
+            <RadioButton GroupName="Role" IsChecked="{Binding Path=IsGraduateStudent}">Graduate Student</RadioButton>
+            <RadioButton GroupName="Role" IsChecked="{Binding Path=IsStaff}">Staff</RadioButton>
+            <RadioButton GroupName="Role" IsChecked="{Binding Path=IsFaculty}">Faculty</RadioButton>
 
+            <Label Content="ID"/>
+            <TextBlock Text="{Binding Path=ID}"/>
         </StackPanel>
     </Border>
 </UserControl>
